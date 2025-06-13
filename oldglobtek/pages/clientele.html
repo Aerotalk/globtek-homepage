@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Clientele</title>
+  <link rel="stylesheet" href="../styles/clientele.css">
+</head>
+<body>
+     <!-- Header and Navbar go here -->
+   <!-- Top Info Bar -->
+    <div class="top-info-bar">
+      <div class="info-left">
+        Indo Japan House, 4th Floor, Saltlake, Kolkata - 700091
+      </div>
+      <div class="info-right">
+        sales@karinfotech.com / sales@globetek.co.in &nbsp;
+        <span class="phone">&#x1F4F1; +91 85850 04344</span> &nbsp;
+        <span class="phone">&#x260E; +65 9376 1663</span>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header">
+      <div class="logo-section">
+        <img
+          src="../assets/Header & Footer logo/Nav logo.png"
+          alt="Globetek Logo"
+          class="logo-img"
+        />
+      </div>
+      <div class="nav-section">
+        <nav>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li class="dropdown">
+              <a href="#" id="solutions-btn">Solutions &#x25BC;</a>
+            </li>
+            <li><a href="#">Partner portal</a></li>
+            <li><a href="#">Our Clientele</a></li>
+            <li><a href="#">Case Study</a></li>
+            <li><a href="#">Events</a></li>
+            <li><button class="sales-btn">TALK TO SALES</button></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  <!-- Hero Section -->
+  <section class="hero-clientele">
+    <div class="hero-overlay">
+      <div class="hero-text">
+        <h1>Our Clientele</h1>
+        <p>
+          We develop creative, comprehensive, and sustainable engineering solutions for a future where society can thrive.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Tab Section -->
+<section class="clientele-tabs">
+  <div class="tabs-container">
+    <div class="tabs">
+      <button class="tab active" data-img="university">UNIVERSITIES, COLLEGES, & SCHOOLS</button>
+      <button class="tab" data-img="hospital">HOSPITALS & DIAGNOSTIC LABS</button>
+      <button class="tab" data-img="airport">AIRPORTS, BANKS, SHOPPING MALLS, & SMART CITIES</button>
+      <button class="tab" data-img="hotel">MULTI-CHAIN HOTELS, RESORTS, & CAFES</button>
+      <button class="tab" data-img="telcos">TELCOS, ISPS, BSPS & MSPS</button>
+    </div>
+    <div class="image-display">
+      <img id="clientele-image" src="../assets/Our client/university.png" alt="Clientele Image" />
+    </div>
+  </div>
+</section>
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const image = document.getElementById('clientele-image');
+
+  const imageMap = {
+    university: '../assets/Our client/university.jpeg',
+    hospital: '../assets/Our client/hospitals.jpeg',
+    airport: '../assets/Our client/Airports.jpeg',
+    hotel: '../assets/Our client/Hotels.jpeg',
+    telcos: '../assets/Our client/Telcos.jpeg'
+  };
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelector('.tab.active')?.classList.remove('active');
+      tab.classList.add('active');
+      const imgKey = tab.getAttribute('data-img');
+      image.src = imageMap[imgKey];
+    });
+  });
+</script>
+</body>
+</html>

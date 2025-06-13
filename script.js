@@ -138,3 +138,19 @@ document.addEventListener('DOMContentLoaded', function () {
   renderThirdPartyCarousel();
   startThirdPartyAutoCarousel();
 });
+
+// --- Accordion Logic ---
+document.querySelectorAll('.benefit-accordion-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const panel = btn.nextElementSibling;
+      const isActive = btn.classList.contains('active');
+      // Close all
+      document.querySelectorAll('.benefit-accordion-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.benefit-accordion-panel').forEach(p => p.style.display = 'none');
+      // Open if not already open
+      if (!isActive) {
+        btn.classList.add('active');
+        panel.style.display = 'block';
+      }
+    });
+  });
